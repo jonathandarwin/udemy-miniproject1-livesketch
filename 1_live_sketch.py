@@ -2,6 +2,10 @@ import cv2
 import numpy as np
 
 def sketch(image):
+    # step 1 : gambar di grayscale
+    # step 2 : gambar di filter menggunakan gaussian blur
+    # step 3 : mendeteksi edge pada gambar menggunakan canny
+    # step 4 : return gambar yang hitam putih beserta edge nya
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     gaussian = cv2.GaussianBlur(gray, (5,5), 0)
     canny = cv2.Canny(gaussian, 10, 70)
